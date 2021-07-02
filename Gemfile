@@ -23,6 +23,11 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 ################   STYLES   ################
+gem 'bootstrap', '~> 5.0', '>= 5.0.1'
+
+################   JS   ################
+gem 'jquery-rails'
+
 
 
 # Use Active Storage variant
