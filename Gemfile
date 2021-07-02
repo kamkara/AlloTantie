@@ -32,7 +32,8 @@ gem 'bootstrap_form', '~> 4.5'
 ################   JS   ################
 gem 'jquery-rails'
 
-
+################  Devise   ################
+gem 'devise', '~> 4.8'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
