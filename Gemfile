@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 2.7'
 ################   STYLES   ################
 gem 'bootstrap', '~> 5.0', '>= 5.0.1'
 
+################   FORMS  ################
+gem 'simple_form', '~> 5.1'
+gem 'bootstrap_form', '~> 4.5'
+
 ################   JS   ################
 gem 'jquery-rails'
 
