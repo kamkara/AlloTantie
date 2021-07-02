@@ -8,8 +8,10 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "stylesheets/application"
-//= require jquery
 
+//= require jquery
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
