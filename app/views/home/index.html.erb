@@ -5,7 +5,7 @@
     <!-- header -->
     <header class="flex items-center justify-between py-2 border-b">
       <a href="#" class="px-2 lg:px-0 uppercase font-bold text-purple-800">
-        LOGO
+        ALLO TANTIE
       </a>
       <ul class="inline-flex items-center">
         <li class="px-2 md:px-4">
@@ -21,10 +21,12 @@
           <a href="" class="text-gray-500 font-semibold hover:text-purple-500"> Contact </a>
         </li>
         <li class="px-2 md:px-4 hidden md:block">
-          <a href="" class="text-gray-500 font-semibold hover:text-purple-500"> Login </a>
+          <%= link_to 'connecter', user_session_path, class:"text-gray-500 font-semibold hover:text-purple-500" %>
+          
         </li>
         <li class="px-2 md:px-4 hidden md:block">
-          <a href="" class="text-gray-500 font-semibold hover:text-purple-500"> Register </a>
+        <%= link_to 'Compte ', new_user_session_path, class:"text-gray-500 font-semibold hover:text-purple-500" %>
+         
         </li>
       </ul>
 
