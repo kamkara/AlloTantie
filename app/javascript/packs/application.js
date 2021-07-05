@@ -8,7 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "stylesheets/application"
-
+import "allo-js/dashboard.js";
 //= require jquery
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js

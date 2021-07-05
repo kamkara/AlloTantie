@@ -1,3 +1,5 @@
+<!-- app/views/devise/registrations/new.html.erb -->
+
 <!-- component -->
 <body class="bg-white">
     <!-- url('/img/hero-pattern.svg') -->
@@ -27,10 +29,14 @@
                    
                 </div>
                 <div class="mt-5">
-                    <input type="text" 
-                    class="block w-full p-2 border rounded border-gray-300 focus:outline-none
-                     focus:ring-1 focus:ring-gray-400 focus:border-transparent "
-                      placeholder="Votre Nom ...">
+                    <%= f.text_field :username, class:"block w-full p-2 border rounded border-gray-300 focus:outline-none
+                     focus:ring-1 focus:ring-gray-400 focus:border-transparent ",
+                      placeholder:"Votre Nom ..." %>
+                </div>
+                <div class="mt-5">
+                    <%= f.text_field :contact, class:"block w-full p-2 border rounded border-gray-300 focus:outline-none
+                     focus:ring-1 focus:ring-gray-400 focus:border-transparent ",
+                      placeholder:"Contact WhatsApp ..." %>
                 </div>
                 <div class="mt-5">
                 <%= f.text_field :password, hide_label: true, 
