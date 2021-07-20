@@ -12,6 +12,11 @@ import "stylesheets/application"
 //= require jquery
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
+
+// application.js
+require("trix")
+require("@rails/actiontext")
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
