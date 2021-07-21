@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
     @product        = current_user.products.build(product_params)
     @product.author = current_user.username#Evite N requete pour recuperer le champs
     @product.avatar = current_user.avatar
-   # @product.img_country = country.img_country
+   # @product.img_country = @countries.img_country
 
     respond_to do |format|
       if @product.save
@@ -69,7 +69,10 @@ class ProductsController < ApplicationController
     end
 
     def find_category
-      @category = Category.all
+      @categories = Category.all.order(created_at: :desc)
+    end
+    def find_country
+      @countries = Country.all.order(created_at: :desc)
     end
     # Only allow a list of trusted parameters through.
     def product_params

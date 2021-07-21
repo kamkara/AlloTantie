@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to :user
 
-
+has_rich_text :content
 
   ################## VALIDATES  ###############
   validates :title,
@@ -20,6 +20,9 @@ class Product < ApplicationRecord
   validates :title, length: { minimum:5 }
   validates :content, length: { minimum:50 }
   
+#Avoid N+1 queries
+  Product.all.with_rich_text_content # Preload the body without attachments.
+  Product.all.with_rich_text_content_and_embeds # Preload both body and attachments.
 
 
 
