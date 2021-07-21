@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @country.title %>
+</p>
+
+<p>
+  <strong>Img country:</strong>
+  <%= @country.img_country %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @country.slug %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @country.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>

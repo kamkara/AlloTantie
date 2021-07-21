@@ -14,7 +14,9 @@ class ProductsTest < ApplicationSystemTestCase
     visit products_url
     click_on "New Product"
 
-    fill_in "Describre", with: @product.describre
+    fill_in "Category", with: @product.category_id
+    fill_in "Content", with: @product.content
+    fill_in "From", with: @product.from
     fill_in "Price", with: @product.price
     fill_in "Slug", with: @product.slug
     fill_in "Title", with: @product.title
@@ -30,7 +32,9 @@ class ProductsTest < ApplicationSystemTestCase
     visit products_url
     click_on "Edit", match: :first
 
-    fill_in "Describre", with: @product.describre
+    fill_in "Category", with: @product.category_id
+    fill_in "Content", with: @product.content
+    fill_in "From", with: @product.from
     fill_in "Price", with: @product.price
     fill_in "Slug", with: @product.slug
     fill_in "Title", with: @product.title

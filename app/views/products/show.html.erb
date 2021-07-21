@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Describre:</strong>
-  <%= @product.describre %>
+  <strong>Content:</strong>
+  <%= @product.content %>
 </p>
 
 <p>
@@ -21,13 +21,23 @@
 </p>
 
 <p>
-  <strong>Slug:</strong>
-  <%= @product.slug %>
+  <strong>From:</strong>
+  <%= @product.from %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category_id %>
 </p>
 
 <p>
   <strong>User:</strong>
   <%= @product.user_id %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @product.slug %>
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

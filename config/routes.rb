@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :countries
+  resources :products
   resources :categories
   get 'admin/index'
-  resources :products
   root to:'home#index'
 
   devise_for :users

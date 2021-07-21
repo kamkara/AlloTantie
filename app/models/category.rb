@@ -1,7 +1,7 @@
 class Category < ApplicationRecord
   belongs_to :user
 
-  ###########  Slug ############
+  
   ################## VALIDATES  ###############
   validates :title, :user_id, presence: true
   validates :title, length: { minimum:5 }

@@ -2,16 +2,20 @@
 
 one:
   title: MyString
-  describre: MyString
+  content: MyText
   price: MyString
   type: 
-  slug: MyString
+  from: MyString
+  category: one
   user: one
+  slug: MyString
 
 two:
   title: MyString
-  describre: MyString
+  content: MyText
   price: MyString
   type: 
-  slug: MyString
+  from: MyString
+  category: two
   user: two
+  slug: MyString

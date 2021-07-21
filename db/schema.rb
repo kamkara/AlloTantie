@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_21_151927) do
+ActiveRecord::Schema.define(version: 2021_07_21_191950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(version: 2021_07_21_151927) do
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
+  create_table "countries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.string "img_country"
+    t.string "slug"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_countries_on_user_id"
+  end
+
   create_table "friendly_id_slugs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -76,13 +86,20 @@ ActiveRecord::Schema.define(version: 2021_07_21_151927) do
 
   create_table "products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
-    t.string "describre"
+    t.text "content"
     t.string "price"
-    t.string "type"
-    t.string "slug"
+    t.string "img_product"
+    t.string "img_country"
+    t.string "author"
+    t.string "avatar"
+    t.uuid "category_id", null: false
     t.uuid "user_id", null: false
+    t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "country"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["country"], name: "index_products_on_country"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -112,5 +129,7 @@ ActiveRecord::Schema.define(version: 2021_07_21_151927) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "users"
+  add_foreign_key "countries", "users"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
 end

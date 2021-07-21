@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :find_category
   before_action :set_product, only: %i[ show edit update destroy ]
 
   # GET /products or /products.json
@@ -21,7 +23,9 @@ class ProductsController < ApplicationController
 
   # POST /products or /products.json
   def create
-    @product = Product.new(product_params)
+    @product        = current_user.products.build(product_params)
+    @product.author = current_user.username#Evite N requete pour recuperer le champs
+    @product.avatar = current_user.avatar
 
     respond_to do |format|
       if @product.save
@@ -59,11 +63,14 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.friendly.find(params[:id])
     end
 
+    def find_category
+      @category = Category.all
+    end
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:title, :describre, :price, :type, :slug, :user_id)
+      params.require(:product).permit(:title, :content, :price, :img_product, :author, :avatar, :from, :category_id, :user_id, :slug)
     end
 end
