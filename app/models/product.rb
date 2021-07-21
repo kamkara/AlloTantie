@@ -9,7 +9,8 @@ class Product < ApplicationRecord
             :content, 
             :price,
             :img_product,
-            :from,
+            :country_id,
+            #:img_country,
             :avatar,
             :author,
             :category_id,
@@ -23,8 +24,6 @@ class Product < ApplicationRecord
 
 
   ################## CONSTANTES ###############
-PAYS = [ "Cote d'ivoire", "Sénégal", "Togo", "Cameroun"]
-
 
   ################## SLUG ###############
   extend FriendlyId

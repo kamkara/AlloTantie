@@ -6,6 +6,7 @@ class User < ApplicationRecord
   #RELATIONS
   has_many :categories, dependent: :destroy
   has_many :products, dependent: :destroy
+  has_many :countries, dependent: :destroy
 
 #has_many :products, class_name: "product", foreign_key: "reference_id", dependent: :destroy
 #has_many :categories, class_name: "categorie", foreign_key: "reference_id", dependent: :destroy
