@@ -27,7 +27,7 @@ gem 'bootstrap', '~> 5.0', '>= 5.0.1'
 gem 'bootstrap-datepicker-rails', '~> 1.9', '>= 1.9.0.1'
 
 ################   FORMS  ################
-gem 'simple_form', '~> 5.1'
+#gem 'simple_form', '~> 5.1'
 gem 'bootstrap_form', '~> 4.5'
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 

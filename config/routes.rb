@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :categories
   get 'admin/index'
   resources :products
   root to:'home#index'
