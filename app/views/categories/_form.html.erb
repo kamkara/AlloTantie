@@ -1,0 +1,48 @@
+
+
+
+<%= form_with(model: category) do |f| %>
+
+<!-- component -->
+<div class="flex justify-center h-screen items-center">
+    <div class='flex max-w-sm w-full h-64 justify-center bg-white shadow-md rounded-lg overflow-hidden mx-auto flex flex-col p-5'>
+        <h3 class="text-2xl font-bold mb-4">Ajouter une categorie</h3>
+    <!-- This is the input component -->
+    <div class="relative h-10 input-component mb-5">
+      
+      <%= f.text_field :title, id:"title", hide_label:true, placeholder:"Catégorie de l'annonce ...",
+        class:"h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm py-4" %>
+      <label for="category" class="absolute left-2 transition-all bg-white px-1">
+        Le titre
+      </label>
+    </div>
+    
+    <!-- Button -->
+    <%= f.submit "Ajouter", class:"bg-yellow-500 py-2 font-semibold text-white" %>
+    </div>
+</div>
+<% end %>
+
+<style>
+label {
+  top: 0%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: rgba(37, 99, 235, 1);
+}
+.empty input:not(:focus) + label {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+input:not(:focus) + label {
+  color: rgba(70, 70, 70, 1);
+}
+input {
+  border-width: 1px;
+}
+input:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, 1);
+}
+</style>
