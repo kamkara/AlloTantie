@@ -10,7 +10,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
-   
+    
+
+
   </head>
 
   <body class="bg-gray-100">
@@ -20,7 +22,5 @@
   </body>
 
   <!-- script footer-->
-  <%= render "shared/allo_assets/styles" %>
-  <%= render "shared/allo_assets/scripts" %>
-  <%= render "shared/allo_assets/cdn" %>
+  <%= render "layouts/shared/links/cdn" %>
 </html>
