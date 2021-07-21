@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'admin/index'
   resources :products
   root to:'home#index'
 
