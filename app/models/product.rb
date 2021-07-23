@@ -1,22 +1,17 @@
 class Product < ApplicationRecord
   belongs_to :category
+  belongs_to :country
   belongs_to :user
   has_one_attached :img_product
 
 has_rich_text :content
 
   ################## VALIDATES  ###############
-  validates :title,
-            :content, 
-            :price,
-            :img_product,
-            :country_id,
-            :img_country,
-            #:avatar,
-            :author,
-            :category_id,
-            :slug,
-            :user_id, presence: true
+  validates :title, :content, :price,
+            :img_product,  #:img_country, #:country_id, #:avatar,
+            :author, :category_id,
+            :slug, :user_id,
+             presence: true
 
   validates :title, length: { minimum:5 }
   validates :content, length: { minimum:50 }
