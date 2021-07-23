@@ -1,4 +1,5 @@
 class CountriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_country, only: %i[ show edit update destroy ]
 
   # GET /countries or /countries.json
@@ -21,11 +22,11 @@ class CountriesController < ApplicationController
 
   # POST /countries or /countries.json
   def create
-    @country = Country.new(country_params)
+    @country = current_user.countries.build(country_params)
 
     respond_to do |format|
       if @country.save
-        format.html { redirect_to @country, notice: "Country was successfully created." }
+        format.html { redirect_to countries_path, notice: "Country was successfully created." }
         format.json { render :show, status: :created, location: @country }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class CountriesController < ApplicationController
   def update
     respond_to do |format|
       if @country.update(country_params)
-        format.html { redirect_to @country, notice: "Country was successfully updated." }
+        format.html { redirect_to countries_path, notice: "Country was successfully updated." }
         format.json { render :show, status: :ok, location: @country }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -59,7 +60,7 @@ class CountriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_country
-      @country = Country.find(params[:id])
+      @country = Country.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

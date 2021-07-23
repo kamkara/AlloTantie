@@ -1,7 +1,6 @@
 class Country < ApplicationRecord
   belongs_to :user
-
-
+  has_one_attached :im__country
   
   validates :title, length: { minimum:5 }
   validates :title,

@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :category
   belongs_to :user
+  has_one_attached :img_product
 
 has_rich_text :content
 
@@ -10,8 +11,8 @@ has_rich_text :content
             :price,
             :img_product,
             :country_id,
-            #:img_country,
-            :avatar,
+            :img_country,
+            #:avatar,
             :author,
             :category_id,
             :slug,

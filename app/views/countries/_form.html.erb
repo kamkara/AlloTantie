@@ -1,16 +1,14 @@
 
-<%= simple_form_for(@country) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
+<%= form_with(model: country) do |f| %>
+ 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :img_country %>
-    <%= f.input :slug %>
-    <%= f.association :user %>
+    <%= f.text_field :title %>    
+  </div>
+  <div class="form-inputs">    
+    <%= f.file_field :img_country %>    
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit "Créer un pays", class:"bg-yellow-300 font-semibold text-white border p-2 m-4" %>
   </div>
 <% end %>

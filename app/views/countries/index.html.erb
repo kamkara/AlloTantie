@@ -1,3 +1,52 @@
+<!-- component -->
+
+<style>
+.bannerFondo{
+  height: 400px;
+}
+</style>
+<div class="bg-whihte">      
+	<div class="bannerFondo bg-yellow-300	bg-left-top bg-auto bg-repeat-x" style="background-image: url(./img/continuartl_4.png)">
+	</div>
+
+      <div class="-mt-64 ">
+  <%= link_to 'Nouv Pays', new_country_path, class:"p-2 font-semibold text-black border rounded" %>
+        <div class="w-full text-center">
+          <p class="text-sm tracking-widest text-white">pays</p>
+          <h1 class="font-bold text-5xl text-white">
+              Ouverts
+          </h1>
+      </div>
+              
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 ">
+      <% @countries.each do |country| %>
+          <div class="p-2 sm:p-10 text-center cursor-pointer">
+              <div class="py-16 max-w-sm rounded overflow-hidden  hover:bg-white transition duration-500  bg-white">
+                  <div class="space-y-10">
+                      <i class="fa fa-spa" style="font-size:48px;"></i>
+                      
+                      <div class="px-6 py-4">
+                          <div class="space-y-5">
+                              <div class="font-bold text-xl mb-2"><%= country.title %></div>
+                              <p class="text-gray-700 text-base">
+                                  150 annonces
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <% end %>
+        
+  
+      </div>
+      </div>
+  
+  </div>
+
+
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Countries</h1>
@@ -30,4 +79,5 @@
 
 <br>
 
-<%= link_to 'New Country', new_country_path %>
+
+
